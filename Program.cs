@@ -10,29 +10,29 @@ namespace CSLuokkaHarjoituksia1
     class Hooman
     {
         // Define properties of Hooman
-        String name = "Peruna Esim";
-        int Age = 30;
-        String gender = "attackhelicopter";
+        public String name = "Peruna Esim";
+        public int Age = 30;
+        public String gender = "attackhelicopter";
 
         // constructor with 0 argument
-        Hooman() 
+        public Hooman() 
         {
 
         }
         // constructor with one argument
-        Hooman(string name)
+        public Hooman(string name)
         {
             this.name = name;
         }
 
         // Constructor with 2 arguments
-        Hooman(string name, int age) 
+        public Hooman(string name, int age) 
         {
             this.name = name;
             this.Age = age;
         }
         // Constructor with 3 arguments
-        Hooman(string name, int age, string gender) 
+        public Hooman(string name, int age, string gender) 
         {
             this.name = name;
             this.Age = age;
@@ -43,6 +43,20 @@ namespace CSLuokkaHarjoituksia1
     {
         static void Main(string[] args)
         {
+            // Create (instantiate) a Hooman Object from Hooman class
+            Hooman owner = new Hooman("Ossi Omistaja", 35, "Suihkuturbiinimoottori");
+
+            // call of SayOpinion method
+            owner.SayOpinion();
+
+            // Keep the window open until enter pressed
+
+            string who = owner.name + " " + owner.Age;
+
+            Console.WriteLine("totesi " + who);
+
+
+            Console.ReadLine();
         }
     }
 }
