@@ -8,7 +8,7 @@ namespace CSLuokkaHarjoituksia1
 {
     class Hooman
     {
-        // define properties of Hooman
+        // Define properties of Hooman
         String name;
         int Age;
         String gender;
