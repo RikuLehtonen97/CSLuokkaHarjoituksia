@@ -3,60 +3,92 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 
-namespace CSLuokkaHarjoituksia1
+namespace Luokkaharjoituksia1
 {
     class Hooman
     {
-        // Define properties of Hooman
-        public String name = "Peruna Esim";
-        public int Age = 30;
-        public String gender = "attackhelicopter";
+        // Define properties of Hooman ie. fields
+        public string name = "Essi Esimerkki";
+        public int age = 30;
+        public string gender = "Emäntä";
 
-        // constructor with 0 argument
-        public Hooman() 
+        // Default constructor w/o arguments
+        // No need to define, will be crated automatically
+        public Hooman()
         {
 
         }
-        // constructor with one argument
+
+        // Constructor with one argument
         public Hooman(string name)
         {
             this.name = name;
         }
 
         // Constructor with 2 arguments
-        public Hooman(string name, int age) 
+        public Hooman(string name, int age)
         {
             this.name = name;
-            this.Age = age;
+            this.age = age;
         }
+
         // Constructor with 3 arguments
-        public Hooman(string name, int age, string gender) 
+        public Hooman(string name, int age, string gender)
         {
             this.name = name;
-            this.Age = age;
+            this.age = age;
             this.gender = gender;
+
+        }
+
+        // A method to say something
+        public void SayOpinion()
+        {
+            Console.WriteLine("Voi, lemmikit ne on elämän suola");
         }
     }
+
+    class CatOwner : Hooman
+    {
+        public new void SayOpinion()
+        {
+            Console.WriteLine("Kissat ovat itsenäisiä ja pitävät hiiret loitolla");
+        }
+    }
+
+    class DogOwner : Hooman
+
+    {
+
+    }
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            // Create (instantiate) a Hooman Object from Hooman class
-            Hooman owner = new Hooman("Ossi Omistaja", 35, "Suihkuturbiinimoottori");
+            // Create (instantiate) a hooman object from Hooman class
+            Hooman owner = new Hooman("Ossi Omistaja", 35, "isäntä");
 
-            // call of SayOpinion method
+            // Call the SayOpinion method
             owner.SayOpinion();
 
-            // Keep the window open until enter pressed
+            // Save owners name property to a variable
+            string who = owner.name;
 
-            string who = owner.name + " " + owner.Age;
-
+            // Test it by echoing it to a console
             Console.WriteLine("totesi " + who);
 
+            // Create a new catowner object
+            CatOwner catOwner = new CatOwner();
 
+            // Use catowners SayOpinion method
+            catOwner.SayOpinion();
+
+            // Keep the window opent until enter pressed
             Console.ReadLine();
+
+
         }
     }
 }
