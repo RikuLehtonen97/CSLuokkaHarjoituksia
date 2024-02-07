@@ -58,8 +58,11 @@ namespace Luokkaharjoituksia1
     }
 
     class DogOwner : Hooman
-
-    {
+    { 
+        public new void SayOpinion() 
+        {
+            Console.WriteLine("Enemmän me syödään jyrsiöitä, sanoi koira");
+        }
 
     }
 
@@ -79,14 +82,24 @@ namespace Luokkaharjoituksia1
             // Test it by echoing it to a console
             Console.WriteLine("totesi " + who);
 
+
             // Create a new catowner object
             CatOwner catOwner = new CatOwner();
-
             // Use catowners SayOpinion method
             catOwner.SayOpinion();
 
+            Console.WriteLine();
+
+            // Create a new dogowner object
+            DogOwner DogOwner = new DogOwner();
+            // Use dogowners SayOpinion method
+            DogOwner.SayOpinion();
+
+
             // Keep the window opent until enter pressed
             Console.ReadLine();
+
+
 
 
         }
