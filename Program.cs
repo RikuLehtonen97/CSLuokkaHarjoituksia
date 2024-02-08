@@ -48,6 +48,25 @@ namespace Luokkaharjoituksia1
             Console.WriteLine("Voi, lemmikit ne on elämän suola");
         }
     }
+    //eats method is explicity defind to be over written in the subclass with keyword virtual
+    
+    
+    class Pet
+    {
+        public virtual void Eats()
+        {
+            Console.WriteLine("lemmikit syö ruokaa");
+        }
+    }
+    // A subclass of pet
+    class Hare : Pet
+    { 
+        public override void Eats()
+        {
+            Console.WriteLine(" jyrsiä syö porkkanoita");
+        }
+ }
+
 
     class CatOwner : Hooman
     {
@@ -56,7 +75,6 @@ namespace Luokkaharjoituksia1
             Console.WriteLine("Kissat ovat itsenäisiä ja pitävät hiiret loitolla");
         }
     }
-
     class DogOwner : Hooman
     { 
         public new void SayOpinion() 
@@ -65,6 +83,7 @@ namespace Luokkaharjoituksia1
         }
 
     }
+
 
     internal class Program
     {
@@ -95,13 +114,16 @@ namespace Luokkaharjoituksia1
             // Use dogowners SayOpinion method
             DogOwner.SayOpinion();
 
+            Console.WriteLine();
+
+            Pet Pet = new Pet();
+            Pet.Eats();
+
+            Hare Hare = new Hare();
+            Hare.Eats();
 
             // Keep the window opent until enter pressed
             Console.ReadLine();
-
-
-
-
         }
     }
 }
